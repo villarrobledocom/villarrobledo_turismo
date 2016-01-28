@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
  <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.villarrobledo.informa" version="1.0.0" >
  <preference name="phonegap-version" value="3.6.3" />
- <name>Villarrobledo Informa</name>
- <description>Notifica las actividades del Ayuntamiento de Villarrobledo.</description>
+ <name>Villarrobledo Turismo</name>
+ <description>Información turística de Villarrobledo</description>
  <author href="http://www.villarrobledo.com" email="villarrobledo.com@gmail.com">Juan Carlos Santos Ballesteros</author>
  <gap:platform name="android" />
  <icon src="icon.png" width="32" height="32" />
- <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.4.2" />
  <access origin="*"/> <!-- allow all pages, use for development -->
- <access origin="*.pushwoosh.com"/> <!-- allow pushwoosh service -->
 </widget>
 

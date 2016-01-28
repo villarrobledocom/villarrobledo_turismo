@@ -1,4 +1,4 @@
-villarrobledo_informa
+villarrobledo_turismo
 =====================
 
-Notifica las actividades del Ayuntamiento de Villarrobledo.
+Da información turística de Villarrobledo.
