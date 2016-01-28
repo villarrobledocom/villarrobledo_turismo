@@ -1,1 +1,4 @@
-h1 {color: pink;}
+.portada {background-color: black;}
+.portada #foto {}
+.portada h1 {font-size: 90%; text-align: center; color: white;}
+.portada #logo {text-align: center;}
