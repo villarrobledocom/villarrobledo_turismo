@@ -2,3 +2,23 @@
 .portada #foto {}
 .portada h1 {font-size: 90%; text-align: center; color: white;}
 .portada #logo {text-align: center;}
+
+p.comentario {margin-bottom: 1em;}
+
+.ui-page {color: white; background: #950054; text-shadow: none !important;}
+
+.ui-header {left: 0; top: 0; height: 50px; right: 0; position: fixed;}
+.ui-content {left: 0; top: 50px; bottom: 50px; right: 0; position: fixed; overflow-y: auto;}
+.ui-footer {left: 0; bottom: 0; height: 50px; right: 0; position: fixed;}
+
+.ui-link {text-align: left;}
+.ui-link {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9c667+0,f79621+100;Orange+3D+%234 */
+background: #f9c667; /* Old browsers */
+background: -moz-linear-gradient(top, #f9c667 0%, #f79621 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #f9c667 0%,#f79621 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #f9c667 0%,#f79621 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9c667', endColorstr='#f79621',GradientType=0 ); /* IE6-9 */
+}
+
+.ui-footer {text-align: center;}
