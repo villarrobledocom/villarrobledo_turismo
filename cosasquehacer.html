@@ -2,9 +2,8 @@
 <html lang="ES">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Villarrobledo Informa</title>
+		<title>Villarrobledo Informa > Turismo > Cosas que hacer</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="refresh" content="3; url='inicio.html'">
 		<link type="text/css" rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
 		<link type="text/css" rel="stylesheet" href="css/jqm-font-awesome-isvg-ipng.min.css" />
 		<link type="text/css" rel="stylesheet" href="css/style.css" />
@@ -12,12 +11,16 @@
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
 	</head>
 	<body>
-		<div data-role="page" class="portada">
+		<div data-role="page" class="inicio">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Cosas que hacer</h2>
+			</div><!-- /header -->
 			<div data-role="content">
-				<img src="plaza.jpg" id="foto" />
-				<h1>Villarrobledo</h1>
-				<img src="ayuntamiento.jpg" id="logo"/>
 			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="inicio.html" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
 		</div><!-- /page -->
 		<script src="js/index.js"></script>
 	</body>
