@@ -9,6 +9,37 @@
 		<link type="text/css" rel="stylesheet" href="css/style.css" />
 		<script src="js/jquery-1.12.0.min.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script>
+document.addEventListener('deviceready', this.onDeviceReady, false);
+
+function OnDeviceReady() {
+	alert('Device is ready');
+	app.receivedEvent('deviceready');
+	initPushwoosh();
+}
+
+function initPushwoosh() {
+	var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
+	document.addEventListener('push-notification', function(event) {
+		var title = event.notification.title;
+		var userData = event.notification.userdata;
+		if(typeof(userData) != "undefined") {
+			console.warn('user data: ' + JSON.stringify(userData));
+		}
+		alert(title);
+	});
+	pushNotification.onDeviceReady({ projectid: "896955415622", pw_appid : "E5DC3-54CB1" });
+	pushNotification.registerDevice(
+		function(status) {
+			var pushToken = status;
+			console.warn('push token: ' + pushToken);
+		},
+		function(status) {
+			console.warn(JSON.stringify(['failed to register ', status]));
+		}
+	);
+}
+</script>
 	</head>
 	<body>
 		<div data-role="page" class="inicio">
