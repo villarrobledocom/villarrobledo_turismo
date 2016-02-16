@@ -10,13 +10,6 @@
 		<script src="js/jquery-1.12.0.min.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
 		<script src="phonegap.js"></script>
-		<script>
-			alert("Estoy fuera");
-			$(document).ready(function() {
-				alert("Estoy dentro");
-				$("#noticias").load("http://villarrobledo.com/app/listado_noticias.php");
-			});
-		</script>
 	</head>
 	<body>
 		<div data-role="page" class="inicio">
@@ -24,7 +17,7 @@
 				<h2>Noticias</h2>
 			</div><!-- /header -->
 			<div data-role="content">
-				<p>Últimas noticias</p>
+				<p>Últimas noticias en la última versión</p>
 				<div id="noticias">
 				</div><!-- /noticias -->
 			</div><!-- /content -->
@@ -32,5 +25,8 @@
 				<a href="inicio.html" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
 			</div><!-- /footer -->
 		</div><!-- /page -->
+		<script>
+			alert("Estoy fuera");
+		</script>
 	</body>
 </html>
