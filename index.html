@@ -11,6 +11,12 @@
 		<script src="js/jquery-1.12.0.min.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
 		<script src="phonegap.js"></script>
+		<script>
+			document.addEventListener("deviceready", deviceReady, false);
+			function deviceReady() {
+				alert("Estoy aquí");
+			}
+		</script>
 	</head>
 	<body>
 		<div data-role="page" class="portada">
@@ -20,6 +26,5 @@
 				<img src="ayuntamiento.jpg" id="logo"/>
 			</div><!-- /content -->
 		</div><!-- /page -->
-		<script src="js/index.js"></script>
 	</body>
 </html>
