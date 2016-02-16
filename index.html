@@ -14,8 +14,8 @@
 		<script src="phonegap.js"></script>
 	</head>
 	<body onload="init()">
-		<div data-role="page" class="portada">
-			<div data-role="content">
+		<div data-role="page">
+			<div data-role="content" id="principal">
 			</div><!-- /content -->
 		</div><!-- /page -->
 		<script>
@@ -23,7 +23,7 @@
 			document.addEventListener("deviceready", onDeviceReady, false);
 		}
 		function onDeviceReady() {
-			$('.content').append('<a href="inicio.html" data-role="button">¡El dispositivo está listo, adelante!</a>');
+			$('#principal').append('<a href="inicio.html" data-role="button">¡El dispositivo está listo, adelante!</a>');
 		}
 		</script>
 	</body>
