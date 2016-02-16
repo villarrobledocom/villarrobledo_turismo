@@ -26,7 +26,11 @@
 			</div><!-- /footer -->
 		</div><!-- /page -->
 		<script>
-			alert("Estoy fuera");
-		</script>
+			document.addEventListener("deviceReady", deviceReady, false);
+			function deviceReady() {
+				alert("Estoy aquí");
+			}
+}		</script>
 	</body>
 </html>
+
