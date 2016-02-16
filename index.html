@@ -4,26 +4,40 @@
 		<meta charset="UTF-8" />
 		<title>Villarrobledo Informa</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="refresh" content="3; url='inicio.html'">
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
 		<link type="text/css" rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
 		<link type="text/css" rel="stylesheet" href="css/jqm-font-awesome-isvg-ipng.min.css" />
 		<link type="text/css" rel="stylesheet" href="css/style.css" />
 		<script src="js/jquery-1.12.0.min.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
-		<script src="phonegap.js"></script>
-		<script>
-			document.addEventListener("deviceready", deviceReady, false);
-			function deviceReady() {
-				alert("Estoy aquí");
-			}
-		</script>
+		<script src="cordova.js"></script>
+<script>
+	app.initialize();
+document.addEventListener('deviceready', this.onDeviceReady, false);
+onDeviceReady: function() {
+    app.receivedEvent('deviceready');
+},
+
+receivedEvent: function(id) {
+    var parentElement = document.getElementById(id);
+    var listeningElement = parentElement.querySelector('.listening');
+    var receivedElement = parentElement.querySelector('.received');
+
+    listeningElement.setAttribute('style', 'display:none;');
+    receivedElement.setAttribute('style', 'display:block;');
+
+    console.log('Received Event: ' + id);
+}
+</script>
 	</head>
 	<body>
 		<div data-role="page" class="portada">
 			<div data-role="content">
-				<img src="plaza.jpg" id="foto" />
-				<h1>Villarrobledo</h1>
-				<img src="ayuntamiento.jpg" id="logo"/>
+				<div id="deviceready" class="blink">
+					<p class="event listening">Connecting to Device</p>
+					<p class="event received">Device is Ready</p>
+				</div>
 			</div><!-- /content -->
 		</div><!-- /page -->
 	</body>
