@@ -20,24 +20,14 @@ onDeviceReady: function() {
 },
 
 receivedEvent: function(id) {
-    var parentElement = document.getElementById(id);
-    var listeningElement = parentElement.querySelector('.listening');
-    var receivedElement = parentElement.querySelector('.received');
-
-    listeningElement.setAttribute('style', 'display:none;');
-    receivedElement.setAttribute('style', 'display:block;');
-
-    console.log('Received Event: ' + id);
+    alert('Estoy listo');
 }
 </script>
 	</head>
 	<body>
 		<div data-role="page" class="portada">
 			<div data-role="content">
-				<div id="deviceready" class="blink">
-					<p class="event listening">Connecting to Device</p>
-					<p class="event received">Device is Ready</p>
-				</div>
+				<a href="inicio.html" data-role="button" data-inline="true" data-transition="fade">Al inicio</a>
 			</div><!-- /content -->
 		</div><!-- /page -->
 	</body>
