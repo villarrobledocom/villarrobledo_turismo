@@ -13,8 +13,6 @@
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
 		<script src="cordova.js"></script>
 <script>
-	app.initialize();
-	document.addEventListener('deviceready', this.onDeviceReady, false);
 	function onDeviceReady() {
 		navigator.notification.alert(
 			'You are the winner!',  // message
@@ -26,6 +24,7 @@
 	function alertDismissed() {
 		// do something
 	}
+
 </script>
 	</head>
 	<body>
@@ -34,5 +33,8 @@
 				<a href="inicio.html" data-role="button" data-inline="true" data-transition="fade">Al inicio</a>
 			</div><!-- /content -->
 		</div><!-- /page -->
+		<script>
+			document.addEventListener("deviceready", onDeviceReady(), true);
+		</script>
 	</body>
 </html>
