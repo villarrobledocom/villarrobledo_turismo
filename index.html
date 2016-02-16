@@ -16,7 +16,15 @@
 	app.initialize();
 	document.addEventListener('deviceready', this.onDeviceReady, false);
 	function onDeviceReady() {
-		console.log(navigator.notification);
+		navigator.notification.alert(
+			'You are the winner!',  // message
+			alertDismissed,         // callback
+			'Game Over',            // title
+			'Done'                  // buttonName
+		);
+	}
+	function alertDismissed() {
+		// do something
 	}
 </script>
 	</head>
