@@ -11,30 +11,21 @@
 		<link type="text/css" rel="stylesheet" href="css/style.css" />
 		<script src="js/jquery-1.12.0.min.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
-		<script src="cordova.js"></script>
-<script>
-	function alertDismissed() {
-		// do something
-	}
-	function onDeviceReady() {
-		navigator.notification.alert(
-			'You are the winner!',  // message
-			alertDismissed,         // callback
-			'Game Over',            // title
-			'Done'                  // buttonName
-		);
-	}
- document.addEventListener("deviceready", function(){
-      alert("123");
- },true);
-</script>
+		<script src="phonegap.js"></script>
 	</head>
-	<body>
+	<body onload="init()">
 		<div data-role="page" class="portada">
 			<div data-role="content">
 				<a href="inicio.html" data-role="button" data-inline="true" data-transition="fade">Al inicio</a>
 			</div><!-- /content -->
 		</div><!-- /page -->
+		<script>
+		function init() {
+			document.addEventListener("deviceready", onDeviceReady, false);
+		}
+		function onDeviceReady() {
+			alert("123");
+		}
+		</script>
 	</body>
 </html>
-
