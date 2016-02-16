@@ -14,14 +14,10 @@
 		<script src="cordova.js"></script>
 <script>
 	app.initialize();
-document.addEventListener('deviceready', this.onDeviceReady, false);
-onDeviceReady: function() {
-    app.receivedEvent('deviceready');
-},
-
-receivedEvent: function(id) {
-    alert('Estoy listo');
-}
+	document.addEventListener('deviceready', this.onDeviceReady, false);
+	function onDeviceReady() {
+		console.log(navigator.notification);
+	}
 </script>
 	</head>
 	<body>
