@@ -16,7 +16,6 @@
 	<body onload="init()">
 		<div data-role="page" class="portada">
 			<div data-role="content">
-				<a href="inicio.html" data-role="button" data-inline="true" data-transition="fade">Al inicio</a>
 			</div><!-- /content -->
 		</div><!-- /page -->
 		<script>
@@ -24,7 +23,7 @@
 			document.addEventListener("deviceready", onDeviceReady, false);
 		}
 		function onDeviceReady() {
-			alert("123");
+			$('.content').append('<a href="inicio.html" data-role="button">¡El dispositivo está listo, adelante!</a>');
 		}
 		</script>
 	</body>
