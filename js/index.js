@@ -20,7 +20,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
-    receivedEvent: function(id) {
+    receivedEvent: function() {
       navigator.notification.alert("El dispositivo está listo", alertDismissed, 'Aviso', 'Cerrar');
       $('#principal').append('<a href="inicio.html" data-role="button">A la página de inicio...</a>');
     },
