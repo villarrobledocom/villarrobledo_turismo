@@ -23,8 +23,10 @@
 			document.addEventListener("deviceready", onDeviceReady, false);
 		}
 		function onDeviceReady() {
-			$('#principal').append('<a href="inicio.html" data-role="button">¡El dispositivo está listo, adelante!</a>');
+			navigator.notification.alert("El dispositivo está listo", alertDismissed, 'Aviso', 'Cerrar');
+			$('#principal').append('<a href="inicio.html" data-role="button">A la página de inicio...</a>');
 		}
+		function alertDismissed() {}
 		</script>
 	</body>
 </html>
