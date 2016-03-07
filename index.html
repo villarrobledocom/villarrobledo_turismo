@@ -10,24 +10,15 @@
 		<link type="text/css" rel="stylesheet" href="css/jqm-font-awesome-isvg-ipng.min.css" />
 		<link type="text/css" rel="stylesheet" href="css/style.css" />
 		<script src="debuggap.js"></script>
+		<script src="phonegap.js"></script>
 		<script src="js/jquery-1.12.0.min.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
-		<script src="phonegap.js"></script>
+		<script src="index.js"></script>
 	</head>
 	<body onload="init">
 		<div data-role="page">
 			<div data-role="content" id="principal">
 			</div><!-- /content -->
 		</div><!-- /page -->
-		<script>
-		function init() {
-			document.addEventListener("deviceready", onDeviceReady, false);
-		}
-		function onDeviceReady() {
-			navigator.notification.alert("El dispositivo está listo", alertDismissed, 'Aviso', 'Cerrar');
-			$('#principal').append('<a href="inicio.html" data-role="button">A la página de inicio...</a>');
-		}
-		function alertDismissed() {}
-		</script>
 	</body>
 </html>
