@@ -1,1 +1,52 @@
-<?xml version="1.0" encoding="UTF-8" ?><widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.villarrobledo.turismo" versionCode="1.0.0" version="1.0.0" >	<name>Villarrobledo Turismo</name>	<description>Información turística de Villarrobledo</description>	<author href="http://www.villarrobledo.com" email="villarrobledo.com@gmail.com">Juan Carlos Santos Ballesteros</author>	<plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />	<access origin="http://villarrobledo.com/app/*" />	<allow-navigation href="http://villarrobledo.com/app/*" />	<preference name="phonegap-version" value="" />	<preference name="orientation" value="portrait" />	<preference name='android-targetSdkVersion' value='14'/>	<preference name='android-minSdkVersion' value='14'/>	<preference name='android-build-tool' value='gradle'/>	<gap:platform name="android" /></widget>
+<?xml version='1.0' encoding='UTF-8'?>
+<widget xmlns='http://www.w3.org/ns/widgets'>
+  <access origin='*'/>
+  <feature name='SocialSharing'>
+    <param name='wp-package' value='SocialSharing'/>
+  </feature>
+  <feature name='AppVersion'>
+    <param name='wp-package' value='AppVersion'/>
+  </feature>
+  <feature name='Camera'>
+    <param name='wp-package' value='Camera'/>
+  </feature>
+  <feature name='Device'>
+    <param name='wp-package' value='Device'/>
+  </feature>
+  <feature name='File'>
+    <param name='wp-package' value='File'/>
+  </feature>
+  <feature name='FileTransfer'>
+    <param name='wp-package' value='FileTransfer'/>
+  </feature>
+  <feature name='NetworkStatus'>
+    <param name='wp-package' value='NetworkStatus'/>
+  </feature>
+  <feature name='Notification'>
+    <param name='wp-package' value='Notification'/>
+  </feature>
+  <feature name='SplashScreen'>
+    <param name='wp-package' value='SplashScreen'/>
+    <param name='onload' value='true'/>
+  </feature>
+  <feature name='Vibration'>
+    <param name='wp-package' value='Vibration'/>
+  </feature>
+  <feature name='InAppBrowser'>
+    <param name='wp-package' value='InAppBrowser'/>
+  </feature>
+  <preference name='phonegap-version' value=''/>
+  <preference name='orientation' value='portrait'/>
+  <preference name='target-device' value='universal'/>
+  <preference name='permissions' value='none'/>
+  <preference name='stay-in-webview' value='false'/>
+  <preference name='android-targetSdkVersion' value='14'/>
+  <preference name='android-minSdkVersion' value='14'/>
+  <preference name='android-build-tool' value='gradle'/>
+  <preference name='android-windowSoftInputMode' value='adjustPan'/>
+  <preference name='DisallowOverscroll' value='true'/>
+  <preference name='webviewbounce' value='false'/>
+  <preference name='SplashScreen' value='splash'/>
+  <preference name='AutoHideSplashScreen' value='true'/>
+  <allow-navigation href='*'/>
+</widget>
