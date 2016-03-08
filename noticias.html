@@ -5,12 +5,17 @@
 		<title>Villarrobledo Informa > Noticias</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script>
-		function cargaNoticias() {
-			alert("Estoy aquí");
+		function onDeviceReady() {
+		  //navigator.notification.alert("El dispositivo está listo", alertDismissed(), 'Aviso', 'Cerrar');
+		  // checkConnection();
+		  $('#noticias').append('<a href="inicio.html" data-role="button">A la página de inicio...</a>');
+		}
+		function init() {
+		  document.addEventListener("deviceready", onDeviceReady(), false);
 		}
 		</script>
 	</head>
-	<body onload="cargaNoticias();">
+	<body onload="init();">
 		<div data-role="page" class="inicio">
 			<div data-role="header" data-theme="b">
 				<h2>Noticias</h2>
