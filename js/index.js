@@ -11,22 +11,6 @@ function checkConnection() {
   states[Connection.NONE] = 'Sin conexión';
   alert('Conexión de red: ' + states[networkState]);
 }
-/*
-function cargaNoticias() {
-  $('#noticias').load("http://www.villarrobledo.com/app/listado_noticias.php",function(){
-    $(this).trigger('create');
-  });
-}
-*/
-function onDeviceReady() {
-  //navigator.notification.alert("El dispositivo está listo", alertDismissed(), 'Aviso', 'Cerrar');
-  // checkConnection();
-  $('#principal').append('<a href="inicio.html" data-role="button">A la página de inicio...</a>');
-}
-function init() {
-  document.addEventListener("deviceready", onDeviceReady(), false);
-}
-
 function cargaNoticias() {
   alert ("Estoy aquí");
 /*
@@ -53,4 +37,19 @@ function cargaNoticias() {
     }
   });
 */
+}
+/*
+function cargaNoticias() {
+  $('#noticias').load("http://www.villarrobledo.com/app/listado_noticias.php",function(){
+    $(this).trigger('create');
+  });
+}
+*/
+function onDeviceReady() {
+  //navigator.notification.alert("El dispositivo está listo", alertDismissed(), 'Aviso', 'Cerrar');
+  // checkConnection();
+  $('#principal').append('<a href="inicio.html" data-role="button">A la página de inicio...</a>');
+}
+function init() {
+  document.addEventListener("deviceready", onDeviceReady(), false);
 }
