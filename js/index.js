@@ -13,7 +13,6 @@ function checkConnection() {
 }
 function cargaNoticias() {
   alert ("Estoy aquí");
-/*
   $.mobile.loading("show", {
     textVisible: true,
     textonly: true,
@@ -36,7 +35,6 @@ function cargaNoticias() {
       $.mobile.loading("hide");
     }
   });
-*/
 }
 /*
 function cargaNoticias() {
