@@ -28,13 +28,14 @@ function cargaNoticias() {
         $('#noticias').empty().append('<p><i>' + item.publicacion + '</i>...</p><p>' + item.titulo + ' </p>').trigger("create");
       });
     },
-    error: function(){
-      var texto = '<p>No se ha podido conectar con villarrobledo.com</p>';
-      $("#noticias").empty().append(texto);
-      $.mobile.loading("hide");
+    error: function(XHR, textStatus, errorThrown){
+      alert("ERREUR: " + textStatus);
+      alert("ERREUR: " + errorThrown);
     }
   });
 }
+
+
 /*
 function cargaNoticias() {
   $('#noticias').load("http://www.villarrobledo.com/app/listado_noticias.php",function(){
