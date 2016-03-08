@@ -20,13 +20,13 @@ function cargaNoticias() {
     html: "<center>cargando datos</center>"
   });
   $.ajax({
-    url: 'http://www.eurovision-spain.com/app/ultimos_comentarios_app.php?jsoncallback=noticia',
+    url: 'http://www.villarrobledo.com/app/listado_noticias.php',
     dataType: 'jsonp',
     jsonp: 'jsoncallback',
     timeout: 25000,
     success: function(data){
       $.each(data, function(item){
-        $('#noticias').empty().append('<p><i>' + item.comentario + '</i>...</p><p>' + item.nick + ' </p>').trigger("create");
+        $('#noticias').empty().append('<p><i>' + item.publicacion + '</i>...</p><p>' + item.titulo + ' </p>').trigger("create");
       });
     },
     error: function(){
