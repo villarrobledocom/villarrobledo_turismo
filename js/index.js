@@ -21,8 +21,7 @@ function cargaNoticias() {
   });
   $.ajax({
     url: 'http://www.villarrobledo.com/app/listado_noticias.php',
-    dataType: 'jsonp',
-    jsonp: 'jsoncallback',
+    dataType: 'json',
     timeout: 25000,
     success: function(data){
       $.each(data, function(item){
@@ -30,7 +29,7 @@ function cargaNoticias() {
       });
     },
     error: function(){
-      var texto = '<p>No se ha podido conectar con eurovision-spain.com</p>';
+      var texto = '<p>No se ha podido conectar con villarrobledo.com</p>';
       $("#noticias").empty().append(texto);
       $.mobile.loading("hide");
     }
