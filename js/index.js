@@ -26,8 +26,8 @@ $(document).on('pagebeforeshow', '#noticias', function() {
         $('#listadonoticias').append('<p>' + item.publicacion + '<br />' + item.titulo + '</p>').trigger("create");
       });
     },
-    error: function() {
-      alert("Ocurrió un error");
+    error: function(xhr, status, error) {
+      alert("ERROR - xhr.status: " + xhr.status + '\nxhr.responseText: ' + xhr.responseText + '\nxhr.statusText: ' + xhr.statusText + '\nError: ' + error + '\nStatus: ' + status);
     }
   });
 });
