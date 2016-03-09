@@ -22,7 +22,9 @@ function cargaNoticias() {
   $.ajax({
     url: 'http://www.villarrobledo.com/app/listado_noticias.php',
     dataType: 'json',
+    data: data,
     timeout: 25000,
+    success: success
     success: function(data){
       $.each(data, function(item){
         $('#noticias').empty().append('<p><i>' + item.publicacion + '</i>...</p><p>' + item.titulo + ' </p>').trigger("create");
