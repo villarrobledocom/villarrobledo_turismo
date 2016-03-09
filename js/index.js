@@ -1,3 +1,4 @@
+// Generales
 function alertDismissed() {}
 function checkConnection() {
   var networkState = navigator.connection.type;
@@ -11,34 +12,36 @@ function checkConnection() {
   states[Connection.NONE] = 'Sin conexión';
   alert('Conexión de red: ' + states[networkState]);
 }
-function cargaNoticias() {
-  alert ("Estoy aquí");
-  $.mobile.loading("show", {
-    textVisible: true,
-    textonly: true,
-    theme:"a",
-    html: "<center>cargando datos</center>"
-  });
-  $.getJSON('http://www.villarrobledo.com/app/listado_noticias.php', function(data) {
-    $.each(data.items, function(i,item) {
-      $('#noticias').empty().append('<p><i>' + item.publicacion + '</i>...</p><p>' + item.titulo + ' </p>').trigger("create");
-    });
-  });
-}
 
 
-/*
-function cargaNoticias() {
-  $('#noticias').load("http://www.villarrobledo.com/app/listado_noticias.php",function(){
-    $(this).trigger('create');
+// Al cargar la página de noticias
+$(document).on('pagebeforeshow', '#noticias', function() {
+  $.ajax({
+    url: 'http://www.villarrobledo.com/app/listado_noticias.php',
+    type: 'GET',
+    dataType: 'json',
+    timeout: 25000,
+    success: function(data, status) {
+      $.each(data, function(i,item) {
+        $('#listadonoticias').append('<p>' + item.publicacion + '<br />' + item.titulo + '</p>').trigger("create");
+      });
+    },
+    error: function() {
+      alert("Ocurrió un error");
+    }
   });
-}
-*/
+});
+
+
+// Al cargar Cordova PhoneGap
 function onDeviceReady() {
   //navigator.notification.alert("El dispositivo está listo", alertDismissed(), 'Aviso', 'Cerrar');
   // checkConnection();
   $('#consola').empty().append('<p>El dispositivo está listo</p>').trigger("create");
 }
+
+
+// Al cargar la aplicación
 function init() {
   document.addEventListener("deviceready", onDeviceReady(), false);
 }
