@@ -36,8 +36,8 @@ $(document).on('pagebeforeshow', '#noticias', function() {
 // Al cargar Cordova PhoneGap
 function onDeviceReady() {
   //navigator.notification.alert("El dispositivo está listo", alertDismissed(), 'Aviso', 'Cerrar');
-  // checkConnection();
-  $('#consola').empty().append('<p>El dispositivo está listo</p>').trigger("create");
+  $('#consola').empty().append('<p>El dispositivo está listo.</p>').trigger("create");
+  checkConnection();
 }
 
 
