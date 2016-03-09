@@ -4,6 +4,7 @@
 	<description>Información turística de Villarrobledo</description>
 	<author href="http://www.villarrobledo.com" email="villarrobledo.com@gmail.com">Juan Carlos Santos Ballesteros</author>
 	<plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
+  <plugin name="org.apache.cordova.network-information" spec="0.2.15" source="pgb" />
 	<access origin="*" />
 	<preference name="phonegap-version" value="" />
 	<preference name="orientation" value="portrait" />
