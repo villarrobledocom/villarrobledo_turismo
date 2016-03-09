@@ -46,7 +46,7 @@ function cargaNoticias() {
 function onDeviceReady() {
   //navigator.notification.alert("El dispositivo está listo", alertDismissed(), 'Aviso', 'Cerrar');
   // checkConnection();
-  $('#principal').append('<a href="inicio.html" data-role="button">A la página de inicio...</a>');
+  $('#consola').empty().append('<p>El dispositivo está listo</p>').trigger("create");
 }
 function init() {
   document.addEventListener("deviceready", onDeviceReady(), false);
