@@ -19,21 +19,10 @@ function cargaNoticias() {
     theme:"a",
     html: "<center>cargando datos</center>"
   });
-  $.ajax({
-    url: 'http://www.villarrobledo.com/app/listado_noticias.php',
-    dataType: 'json',
-    data: data,
-    timeout: 25000,
-    success: success
-    success: function(data){
-      $.each(data, function(item){
-        $('#noticias').empty().append('<p><i>' + item.publicacion + '</i>...</p><p>' + item.titulo + ' </p>').trigger("create");
-      });
-    },
-    error: function(XHR, textStatus, errorThrown){
-      alert("ERREUR: " + textStatus);
-      alert("ERREUR: " + errorThrown);
-    }
+  $.getJSON('http://www.villarrobledo.com/app/listado_noticias.php', function(data) {
+    $.each(data.items, function(i,item) {
+      $('#noticias').empty().append('<p><i>' + item.publicacion + '</i>...</p><p>' + item.titulo + ' </p>').trigger("create");
+    });
   });
 }
 
