@@ -13,9 +13,383 @@
 		<script src="js/index.js"></script>
 	</head>
 	<body onload="init();">
-		<div data-role="page">
-			<div data-role="content" id="principal">
+
+
+		<!-- Inicio -->
+		<div data-role="page" id="inicio">
+			<div data-role="header" data-theme="b">
+				<h1>Villarrobledo</h1>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="consola"></div>
+				<div id="notificaciones">
+					<p class="comentario">Aquí se mostraría la última notificación y habría un botón para acceder a todo el listado.</p>
+				</div><!-- /notificaciones -->
+				<div data-role="controlgroup" data-theme="b" class="menu">
+					<a href="#noticias" data-role="button" data-theme="b" data-icon="fa-bullhorn" data-transition="slide">Noticias</a>
+					<a href="#agenda" data-role="button" data-theme="b" data-icon="fa-calendar" data-transition="slide">Agenda</a>
+					<a href="#directorio" data-role="button" data-theme="b" data-icon="fa-info" data-transition="slide">Directorio</a>
+					<a href="#turismo" data-role="button" data-theme="b" data-icon="fa-suitcase" data-transition="slide">Turismo</a>
+					<a href="#enlaces" data-role="button" data-theme="b" data-icon="fa-thumb-tack" data-transition="slide">Enlaces</a>
+				</div><!-- /menu -->
 			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#" data-role="button" data-icon="delete" data-inline="true" data-transition="fade">Cerrar</a>
+			</div><!-- /footer -->
 		</div><!-- /page -->
+
+
+		<!-- Noticias -->
+		<div data-role="page" id="noticias">
+			<div data-role="header" data-theme="b">
+				<h2>Noticias</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="noticias">
+					<p onclick="cargaNoticias();">Pincha aquí para cargar las noticias</p>
+				</div><!-- /noticias -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Agenda -->
+		<div data-role="page" id="agenda">
+			<div data-role="header" data-theme="b">
+				<h2>Agenda</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<p class="comentario">Aquí se mostrarían unos bloques de actividades.</p>
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Directorio -->
+		<div data-role="page" id="directorio">
+			<div data-role="header" data-theme="b">
+				<h2>Directorio</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div data-role="controlgroup" data-theme="b" id="menu">
+					<a href="#patrimonio" data-role="button" data-theme="b" data-icon="fa-institution" data-transition="slide">Patrimonio</a>
+					<a href="#entesmunicipales" data-role="button" data-theme="b" data-icon="fa-building-o" data-transition="slide">Entes municipales</a>
+					<a href="#asociacionesyclubes" data-role="button" data-theme="b" data-icon="fa-group" data-transition="slide">Asociaciones y clubes</a>
+					<a href="#parquesyjardines" data-role="button" data-theme="b" data-icon="fa-leaf" data-transition="slide">Parques y jardines</a>
+					<a href="#alojamiento" data-role="button" data-theme="b" data-icon="fa-hotel" data-transition="slide">Alojamiento</a>
+					<a href="#baresyrestaurantes" data-role="button" data-theme="b" data-icon="fa-cutlery" data-transition="slide">Bares y restaurantes</a>
+					<a href="#bodegas" data-role="button" data-theme="b" data-icon="fa-glass" data-transition="slide">Bodegas</a>
+					<a href="#artesaniaytipicos" data-role="button" data-theme="b" data-icon="fa-gift" data-transition="slide">Artesanía y típicos</a>
+				</div><!-- /menu -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Patrimonio -->
+		<div data-role="page" id="patrimonio">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Patrimonio</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<p>Villarrobledo reúne un interesante patrimonio histórico artístico que alcanza su máxima expresión en la plaza Ramón y Cajal. A ella abren sus puertas tres de los edificios más emblemáticos: la iglesia de San Blas de los siglos XV y XVI, la Casa Consistorial del siglo XVI y la casa más antigua de la ciudad de la familia López Muñoz, que cierra la Plaza Vieja por su parte sur, aquí estuvieron instalados los monjes de la Orden de Santo Domingo, que ejercieron en la villa el Santo Oficio de la Inquisición.</p>
+				<p>Este patrimonio se completa con numerosos edificios religiosos y civiles entre los que destacan: la iglesia de San Sebastián, cuya parroquia fue fundada en el siglo XV, los conventos cisterciense de San Bernardo del siglo XVI y el de las Clarisas (convento de Santa Clara) y su iglesia de San Juan de principios del siglo XVII, y sobre todo el santuario de Nuestra Señora de la Caridad, patrona de Villarrobledo y que conserva curiosos tesoros.</p>
+				<p>En cuanto al patrimonio civil, recoge destacados edificios que son exponentes de diversos estilos y épocas.</p>
+				<p class="comentario">Descubra los lugares más interesantes:</p>
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Entes municipales -->
+		<div data-role="page" id="entesmunicipales">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Entes municipales</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<p class="comentario">Aquí se mostrará el directorio municipal.</p>
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Asociaciones y clubes -->
+		<div data-role="page" id="asociacionesyclubes">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Asociaciones y clubes</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<p class="comentario">Aquí se mostrará una tabla de las asociaciones y clubes.</p>
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Parques y jardines -->
+		<div data-role="page" id="parquesyjardines">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Parques y jardines</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<p class="comentario">Nuestros parques y jardines más importantes:</p>
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Alojamiento -->
+		<div data-role="page" id="alojamiento">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Alojamiento</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<p class="comentario">Lugares donde alojarse:</p>
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+
+		<!-- Bares y restaurantes -->
+		<div data-role="page" id="baresyrestaurantes">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Bares y restaurantes</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<p class="comentario">Lugares donde comer y beber:</p>
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Bodegas -->
+		<div data-role="page" id="bodegas">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Bodegas</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<p class="comentario">Descubra las bodegas de la ciudad:</p>
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Artesanía y productos típicos -->
+		<div data-role="page" id="artesaniaytipicos">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Artesanía y productos típicos</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<p class="comentario">Descubra los mejores artesanos y fabricantes de productos típicos de la ciudad:</p>
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Turismo -->
+		<div data-role="page" id="turismo">
+			<div data-role="header" data-theme="b">
+				<h2>Turismo</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div data-role="controlgroup" data-theme="b" id="menu">
+					<a href="#datosgeograficos" data-role="button" data-theme="b" data-icon="fa-compass" data-transition="slide">Datos geográficos</a>
+					<a href="#historiaarteycultura" data-role="button" data-theme="b" data-icon="fa-bullseye" data-transition="slide">Historia, arte y cultura</a>
+					<a href="#fiestas" data-role="button" data-theme="b" data-icon="fa-eye" data-transition="slide">Fiestas</a>
+					<a href="#zonasverdesynaturaleza" data-role="button" data-theme="b" data-icon="fa-pagelines" data-transition="slide">Zonas verdes y naturaleza</a>
+					<a href="#cosasquehacer" data-role="button" data-theme="b" data-icon="fa-shopping-cart" data-transition="slide">Cosas que hacer</a>
+					<a href="#rutasturisticas" data-role="button" data-theme="b" data-icon="fa-camera-retro" data-transition="slide">Rutas turísticas</a>
+					<a href="#serviciosturisticos" data-role="button" data-theme="b" data-icon="fa-coffee" data-transition="slide">Servicios turísticos</a>
+				</div><!-- /menu -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Datos geográficos -->
+		<div data-role="page" id="datosgeograficos">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Datos geográficos</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<p>Villarrobledo soporta una situación socioeconómica altamente influenciada por el medio físico. Su relieve, la tipología de sus suelos, el clima, han condicionado el desarrollo de una agricultura extensiva dominada por el cultivo de la vid y los cereales de invierno y primavera, la cual se complementa con otro tipo de cultivos como leguminosas, plantas forrajeras y hortalizas, y con explotaciones ganaderas dedicadas, fundamentalmente, a la cría de ganado ovino de raza "manchega" destinado a la producción de carne y leche. Todo ello ha propiciado a su vez el desarrollo de una industria agroalimentaria e industrias auxiliares.</p>
+				<h3>Situación y comunicaciones</h3>
+				<p>Su privilegiada situación geográfica, equidistante de los cuatro puntos cardinales y cabecera de una amplia comarca de rico patrimonio cultural y natural, hacen de Villarrobledo lugar de encuentro, abierto a la palabra, a la voz y necesidad del viajero. Además, cuenta con importantes vías de comunicación tanto por carretera como por ferrocarril que le conectan de manera rápida con grandes ciudades como Madrid, la zona de Levante y capitales andaluzas como Córdoba o Granada, así como con otras ciudades y pueblos del entorno.</p>
+				<p>Villarrobledo está a 75 km de Albacete y a 204 de Madrid.</p>
+				<h3>Relieve</h3>
+				<p>Desde el punto de vista del relieve, Villarrobledo como parte de La Mancha, reúne las características plenas de la Meseta: tierras con una altitud media elevada superior a los 600 metros sobre el nivel del mar, e inequívocamente planas.</p>
+				<p>Su término municipal se halla enclavado en una zona de depresión rellena de sedimentos que se puede considerar completamente llana donde sólo se aprecian ligeras ondulaciones del terreno. La altitud, de un extremo a otro del amplio término municipal, tiene una variación mínima; la media más elevada es de 722 metros sobre el nivel del mar y está localizada al sudeste; en la parte noroccidental, entre los cauces de los ríos Záncara y Córcoles, la altitud media alcanza los 670 metros. A pesar de la uniformidad, se pueden distinguir zonas como la oriental con ondulaciones de altitud entre 700 y 770 metros con algún cerro enla zona sudeste: Mirón (763 m.), Alto de Juan Cano (754 m.) y el Charcón (781 m.) En la parte occidental, que se puede considerar completamente llana, también cuenta con algún cerro testigo con altitudes cercanas a los 700 metros.</p>
+				<h3>Hidrografía</h3>
+				<p>El cauce más importante de la zona es el río Záncara, que transcurre por el norte del término municipal formando un límite natural entre las provincias de Albacete, Cuenca y Ciudad Real; baja directamente del norte virando bruscamente hacia el oeste para introducirse en los llanos de San Juan buscando el cauce del río Guadiana. El río Záncara a su paso por Villarrobledo tiene como afluente más notable la Cañada de Valdelobos que circunda prácticamente toda la población dirigiendose hacia el norte.</p>
+				<p>El segundo cauce en importancia y el de mayor recorrido por nuestro territorio es el río Córcoles que tiene su origen en la Sierra de Alcaraz y que atraviesa la zona para introducirse igualmente en los llanos de San Juan. Por otra parte, en la zona sur occidental no existen cauces significativos, aunque se localiza un drenaje que tiene dirección sur a noroeste conocido como la "Cañada de Lo Ancho " que pierde sus aguas en la llanura.</p>
+				<p>Con todo, el mayor recurso hidrológico de Villarrobledo es el Acuífero 23, denominado "Mancha Occidental" que se ubica íntegramente en la cuenca del Guadiana. El origen de esta agua subterránea procede en su mayor parte de las infiltraciones del agua de lluvia y en menor medida de los ríos.</p>
+				<h3>Clima</h3>
+				<p>Desde el punto de vista climático Villarrobledo reúne en líneas generales las características de la llanura manchega con un tipo de clima mediterráneo templado con claros tintes continentales como lo prueba su elevada amplitud térmica a consecuencia de la diferencia entre las temperaturas máximas y mínimas, y a la escasez de precipitaciones. Sirva de ejemplo el año 1983 en que se registraron las temperaturas más extremas con una máxima, el día 11 de julio de 40 ºC y una mínima de -20 ºC el 14 de febrero. Con todo, la tendencia que se viene observando en los últimos años es la suavización de las temperaturas.</p>
+				<p>La temperatura media anual de Villarrobledo oscila entre los 12 y los 16 ºC con un registro de temperaturas máximas en los meses de julio y agosto en los que se puede alcanzar una media de 24'8 ºC siendo los meses más fríos enero y diciembre con una media de 4'7 ºC. Es igualmente significativo el período de heladas con una duración de 5 a 7 meses.</p>
+				<p>En lo que respecta al régimen de humedad, los índices de humedad mensuales y anuales, la lluvia de lavado, distribución estacional de la pluviometría, etc., lo definen como un clima mediterráneo seco, es decir, determinadas épocas del año, coincidiendo con los meses de verano, presentan un déficit hídrico donde el nivel de precipitaciones queda muy por debajo de la curva de temperaturas. El volumen medio anual de precipitaciones se sitúa entre los 400 y los 600 m. El máximo de precipitaciones se registra en invierno con un 31% del total seguido muy de cerca por los meses de otoño con un 30%. Otro factor a destacar dentro del clima es el de la insolación y el número de horas de sol que disfrutamos al año con una media de 2.727'8 horas siendo los meses de julio con 347'1 horas y agosto con 320 horas los de mayor número.</p>
+				<h3>Vegetación</h3>
+				<p>El nombre de Villarrobledo dice mucho sobre el lugar en que tuvo lugar el nacimiento de esta población: un extenso robledal. La acción del hombre con el pastoreo y las roturaciones, así como las condiciones climáticas adversas han cambiado por completo esta fisonomía.</p>
+				<p>En la actualidad prácticamente un 90% del total del término municipal de Villarrobledo está dedicado a tierras de labor, el 10% restante está ocupado por una vegetación natural que, en estado climático, es fundamentalmente esclerófila, dentro de un ecosistema de bosque esclerófilo mediterráneo con un predominio de la familia de los "quercus" de hoja persitente o marescente entre los que destacan Quercus Suber (alcornoque), Quercus Ilex Rotundifolia (encina), Quercus Fagina (quejigo) y Quercus Pirenaica (rebollo), siendo la encina la variedad más clásica y extendida.
+				<p>Este patrimonio natural es completado con otras especies frondosas maderables como los chopos y álamos y coníferas (pinos de diversas especies), especies arbustivas, que forman un matorral con base de coscojas, tomillo, romero, aliaga, espliego y esparto. A ello habría que añadir otra fuente dominada por la actuación del hombre en la que se agrupan eriales y plantas que se desarrollan dentro de los terrenos cultivados, pero sin intencionalidad humana, formando el pastizal-matorral compuesto por: retamas, hinojos, carlinas, escobas blancas, cardos borriqueros...</p>
+				<p>Dentro de estas últimas especies habría que destacar la localización en Villarrobledo de una variedad peculiar la Sisymbrium Cavanillesianum, una herbácea anual de ciclo corto perteneciente a la familia de las "brassicaceae", que florece hacia marzo-abril y fructifica en mayo-junio. Se trata de un endemismo ibérico de área de distribución restringida y una de las 21 especies de fanerógamas incluidas en la primera lista de conservación de Bern sobre "La conservación de la vida salvaje y el hábitat natural en Europa" incluida en la Directiva de Habitats 92/43 de la Unión Europea en la que se especifica la conservación "in situ" de estas especies. Asimismo, figura como especie catalogada en peligro de extinción en el "Libro rojo de especies vegetales amenazadas de España".</p>
+				<p>En cumplimiento de la nomativa comunitaria se ha creado en Villarrobledo, en el lugar de su localización (zona sur) en el paraje conocido como "Cerro de la Encantá", una mini reserva botánica declarada como tal en 1987, donde se protegen este y otros endemismo ibéricos y que ha servido para la recogida de germoplasma con semillas de todos los endemismos ibérico-ibero-africanos para el banco de semillas del proyecto Artemis. La mini reserva tiene una superficie de 10 ha. de las que 2/3 partes se dedican al cultivo de cereal de secano y el resto contiene monte de encinas aclaradas con abundante matorral de romero, coscoja y esparto. Durante una inspección botánica en esta zona se observó la presencia de 166 especies o subespecies de plantas vasculares de las cuales 11 eran endemismos ibéricos y 15 ibero-africanos.</p>
+				<p>La Sisymbrium Cavanillesianum es la especie con mayor importacia dentro de la mini reserva junto con la Ziziphora Acinoides; para sobrevivir requieren la remoción del suelo, por lo que el abandono de los cultivos de secano o su transformación en regadío pueden resultar fatales para su supervivencia.</p>
+				<h3>Fauna</h3>
+				<p>Desde el punto de vista de la fauna, atendiendo a las características de la zona en que nos encontramos, con un predominio claro del monte bajo, son abundantes los animales nidadores con un amplio abanico de especies, algunas de ellas en peligro de extinción, entre las que todavía hoy se pueden observar algunas rapaces diurnas y nocturnas de considerable tamaño y otras aves esteparias como la avutarda; dentro de este grupo de especies poco frecuentes hay que destacar la presencia nuevamente en Villarrobledo de otra variedad protegida como la cigueña común.</p>
+				<p>Son reseñables otras, como la afamada perdiz roja "brava" que, además de abundante, conserva su estado de pureza, ya que las repoblaciones que se han hecho en Villarrobledo han sido mínimas y muy puntuales. Dentro de los nidadores habría que incluir también las aves migratorias que eligen estos parajes para reproducirse como las palomas torcaces, la tórtola y la codorniz. Algunas de ellas han pasado de ser migratorias y cumplen aquí su ciclo vital, y otros, como el chorlito, el cuquillo, el abejaruco y por supuesto una gran variedad de córvidos (cuervos y urracas), de tordos y últimamente de estorninos, vencejos, golondrinas, entre otros.</p>
+				<p>Dentro de los mamíferos son abundantes las liebres, los conejos, topos, roedores, y algunos mustélidos. Aunque existen pocos ejemplares, en las zonas de monte más cerrado todavía se pueden observar algunos zorros y gatos monteses y una especie que empieza a se cada vez más frecuente como el jabalí.</p>
+				<p>Por último, la fauna se completa con la presencia de reptiles entre los que destacan el lagarto verde, largartijas, culebras y alguna variedad de víboras, a ello habría que añadir una micro fauna que desarrolla junto con la microflora la gran labor humidificadora del suelo.</p>
+				<h3>Habitantes</h3>
+				<p>Población total: 25.418 (12.804 hombres y 12.614 mujeres).</p>			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Historia, arte y cultura -->
+		<div data-role="page" id="historiaarteycultura">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Historia, arte y cultura</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<p>El proceso histórico de Villarrobledo se inicia en el siglo XIII, si bien, dentro de sus dominios territoriales se registran asentamientos humanos de manera continuada desde el Paleolítico.</p>
+				<p>Hasta 1412 estuvo bajo la jurisdicción de Alcaraz, ese año fue elevado a la categoría de villa por Juan II, titulo que le sería arrebatado por el Marques de Villena. En 1475 los Reyes Católicos le devolverían este privilegio por el apoyo recibido de los vecinos de Villarrobledo con motivo de los problemas de sucesión de Enrique IV. Los servicios que prestó siempre Villarrobledo a la Corona le sirvieron para alcanzar los títulos de "Muy Noble y Leal". El siglo XVI fue para Villarrobledo su siglo de Oro, registró un gran avance económico, social y demográfico que se ha mantenido hasta la actualidad.</p>
+				<p>Hoy es una ciudad dinámica y moderna que, sin embargo, ha sabido conservar sus señas de identidad y su idiosincrasia de claras raíces manchegas.</p>
+				<h3>Hechos históricos</h3>
+				<p>Villarrobledo es una característica ciudad manchega que antes de su fundación perteneció administrativamente a la poderosa Villa de Alcaraz bajo la denominación de Villarejo de San Nicolás. Hacia 1292 por una serie de conflictos con la vecina localidad de Socuéllamos (Villarejo de San Bartolomé entonces), Juan Martínez de la Plaza y siete familias deciden marcharse del Villarejo y se instalan en un espeso robledal, donde pocos años después se instalarían un buen número de familias, dando lugar a un nuevo núcleo de población que se denominó Robledillo.</p>
+				<p>En 1407 Juan II concede los privilegios de villa al Robledillo, poco después este mismo rey cede la Villa a don Rodrigo Manrique, maestre de la Orden de Santiago, quien la vendería a don Juan Pacheco, marqués de Villena. Durante las turbulencias de la Guerra de Sucesión por la Corona de Castilla, los vecinos de Villarrobledo inician una revuelta contra el marqués de Villena y prestan su apoyo a los Reyes Católicos. En 1476, reducido a la Real Corona gran parte del marquesado de Villena, los Reyes Católicos conceden definitivamente el privilegio de Villa a este lugar, que pasaría a llamarse Villa-Robledo de la Vega, denominación que subsistirá hasta el siglo XVIII.</p>
+				<p>Durante el siglo XV tiene lugar el gran proceso histórico de Villarrobledo tanto en el orden político como jurisdiccional y social, se experimenta un gran crecimiento de la población. Es el siglo de las grandes fundaciones: iglesia de San Blas, San Sebastián, San Cristóbal y Santa María.</p>
+				<p>El siglo XVI fue para Villarrobledo su siglo de Oro, registró un gran avance económico, social y demográfico. A principios del XVII se pasó del auge a la decadencia por diversas causas: pródigos y servicios continuos a la Corona, división de clases sociales, grandes sequías y epidemias. Los servicios que prestó siempre Villarrobledo a la Corona le sirvieron para alcanzar los títulos de “Muy Noble y Leal Villa”. Otro episodio digno de ser destacado es la famosa “Batalla de Villarrobledo”, en 1836 con motivo de la primera guerra Carlista tuvo lugar en el paraje de San Cristóbal una de las batallas más decisivas, el triunfo de las tropas isabelinas dirigidas por los generales Diego de León y Alaix cambió el rumbo de la guerra.</p>
+				<p>En la actualidad Villarrobledo es un núcleo de población importante, una ciudad avanzada y dotada de modernas infraestructuras, que, sin embargo, ha sabido conservar sus señas de identidad e idiosincrasia.</p>
+				<h3>Personajes ilustres</h3>
+				<p>Pedro Ortiz, natural de Villarrobledo, obtuvo la cátedra de Teología por la universidad de París, donde fue profesor de S. Ignacio de Loyola. Asimismo, fue embajador de Carlos I en Roma durante el conflicto del rey Enrique VIII de Inglaterra con la Santa Sede por el intento de anular su matrimonio con Catalina de Aragón, tía del Emperador, para casarse con Ana Bolena.</p>
+				<p>Fray Diego Morcillo Rubio de Auñón, Arzobispo y Virrey de Perú, nació en Villarrobledo el 3 de enero de 1642. Nombrado por el rey Carlos II su predicador de cámara, y por Felipe V Virrey de Perú. Ejerció, además el magisterio en la Universidad de Alcalá, fue calificador del Consejo Supremo de la Inquisición y Obispo de Nicaragua.</p>
+				<p>Tomás de Torrejón y Velasco. Bautizado en Villarrobledo en 1644. Su gran obra, la ópera “La púrpura de la rosa”, la primera compuesta en el Nuevo Mundo de la que se tiene constancia, fue estrenada en España a finales de 1701 con motivo del octavo cumpleaños de Felipe V.</p>
+				<p>De gran relevancia fueron también Octavio Cuartero Cifuentes y Graciano Atienza Fernández.</p>
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Fiestas -->
+		<div data-role="page" id="fiestas">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Fiestas</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Zonas verdes y naturaleza -->
+		<div data-role="page" id="zonasverdesynaturaleza">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Zonas verdes y naturaleza</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Cosas que hacer -->
+		<div data-role="page" id="cosasquehacer">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Cosas que hacer</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Rutas turísticas -->
+		<div data-role="page" id="rutasturisticas">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Rutas turísticas</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Servicios turísticos -->
+		<div data-role="page" id="serviciosturisticos">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Servicios turísticos</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!-- Enlaces -->
+		<div data-role="page" id="enlaces">
+			<div data-role="header" data-theme="b">
+				<h2>Enlaces</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<p class="comentario">Aquí se mostrarían unos enlaces.</p>
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
 	</body>
 </html>
