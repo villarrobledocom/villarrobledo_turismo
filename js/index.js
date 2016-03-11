@@ -12,7 +12,7 @@ function checkConnection() {
   states[Connection.CELL_3G] = 'Teléfono 3G';
   states[Connection.CELL_4G] = 'Teléfono 4G';
   states[Connection.NONE] = 'Sin conexión';
-  navigator.notification.alert("Conexión de red" + states[networkState], alertDismissed(), 'Aviso', 'Cerrar');
+  navigator.notification.alert("Conexión de red: " + states[networkState], alertDismissed(), 'Aviso', 'Cerrar');
 }
 
 // Al cargar la página de noticias
@@ -33,25 +33,25 @@ $(document).on('pagebeforeshow', '#noticias', function() {
   });
 });
 
-// Registrar el dispositivo para notificaciones Push
-function registrar(){
-  var nombre = document.getElementById('name').value;
-  var email = document.getElementById('email').value;
-  var regId = document.getElementById('regId').value;
-  if(regId != "") {
-    if(nombre != "" && email != "") document.formulario.submit(); else alert('Ingrese un nombre y un correo para el registro en la base de datos.');
-  } else {
-    alert('Esperando el regId del registro en GCM!');
-  }
-}
-
 // Al cargar Cordova PhoneGap
 function onDeviceReady() {
 
   navigator.notification.alert("El dispositivo está preparado", alertDismissed(), 'Aviso', 'Cerrar');
   checkConnection();
 
-  // Push Notifications
+  // Registrar el dispositivo para notificaciones Push
+  function registrar(){
+    var nombre = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var regId = document.getElementById('regId').value;
+    if(regId != "") {
+      if(nombre != "" && email != "") document.formulario.submit(); else alert('Ingrese un nombre y un correo para el registro en la base de datos.');
+    } else {
+      alert('Esperando el regId del registro en GCM!');
+    }
+  }
+
+    // Push Notifications
   pushNotification = window.plugins.pushNotification;
   if(device.platform == 'android' || device.platform == 'Android' ) {
     alert("registering android");
