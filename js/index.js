@@ -1,3 +1,5 @@
+var pushNotification;
+
 // Generales
 function alertDismissed() {}
 function checkConnection() {
@@ -50,19 +52,13 @@ function onDeviceReady() {
   checkConnection();
 
   // Push Notifications
-  var pushNotification = window.plugins.pushNotification;
-  if(device.platform == 'android' || device.platform == 'Android') {
-    alert("Register called");
-    pushNotification.register(this.successHandler, this.errorHandler, {"senderID":"896955415622", "ecb":"app.onNotificationGCM"});
+  pushNotification = window.plugins.pushNotification;
+  if(device.platform == 'android' || device.platform == 'Android' ) {
+    alert("registering android");
+    pushNotification.register(successHandler, errorHandler, {"senderID":"896955415622", "ecb":"onNotificationGCM"});
   } else {
-    alert("Register called");
-    pushNotification.register(this.successHandler, this.errorHandler, {"badge":"true", "sound":"true", "alert":"true", "ecb":"app.onNotificationAPN"});
-  }
-  function successHandler(result) {
-    alert('Callback Success! Result = ' + result);
-  }
-  function errorHandler(error) {
-    alert(error);
+    alert("registering ios");
+    pushNotification.register(tokenHandler, errorHandler, {"badge":"true", "sound":"true", "alert":"true", "ecb":"onNotificationAPN"});
   }
   function onNotificationGCM(e) {
     switch(e.event) {
@@ -74,7 +70,7 @@ function onDeviceReady() {
         }
         break;
       case 'message':
-        alert('message = ' + e.message + ' msgcnt = ' + e.msgcnt);
+        alert('message = ' + e.payload.message + ' msgcnt = ' + e.payload.msgcnt);
         break;
       case 'error':
         alert('GCM error = ' + e.msg);
@@ -84,15 +80,11 @@ function onDeviceReady() {
         break;
     }
   }
-  function onNotificationAPN(event) {
-    var pushNotification = window.plugins.pushNotification;
-    alert("Running in JS - onNotificationAPN - Received a notification! " + event.alert);
-    if(event.alert) navigator.notification.alert(event.alert);
-    if(event.badge) pushNotification.setApplicationIconBadgeNumber(this.successHandler, this.errorHandler, event.badge);
-    if(event.sound) {
-      var snd = new Media(event.sound);
-      snd.play();
-    }
+  function successHandler(result) {
+    alert('Callback Success! Result = ' + result);
+  }
+  function errorHandler(error) {
+    alert(error);
   }
 
 }
