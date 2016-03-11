@@ -10,7 +10,7 @@ function checkConnection() {
   states[Connection.CELL_3G] = 'Teléfono 3G';
   states[Connection.CELL_4G] = 'Teléfono 4G';
   states[Connection.NONE] = 'Sin conexión';
-  alert('Conexión de red: ' + states[networkState]);
+  navigator.notification.alert("Conexión de red" + states[networkState], alertDismissed(), 'Aviso', 'Cerrar');
 }
 
 // Al cargar la página de noticias
