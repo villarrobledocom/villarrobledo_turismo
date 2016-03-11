@@ -10,10 +10,11 @@
 		<script src="js/jquery-1.12.0.min.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
 		<script src="cordova.js"></script>
+		<script src="js/PushNotification.js"></script>
 		<script src="js/index.js"></script>
+
 	</head>
 	<body onload="init();">
-
 
 		<!-- Inicio -->
 		<div data-role="page" id="inicio">
@@ -21,9 +22,16 @@
 				<h1>Villarrobledo</h1>
 			</div><!-- /header -->
 			<div data-role="content">
+				<form method="post" action="http://www.villarrobledo.com/app/registro.php" id="formulario">
+					<p><input type="text" value="Juan Nadie" name="name" id="name"></p>
+					<p><input type="text" value="pepe@terra.es" name="email" id="email"></p>
+					<p><input type="text" readonly="readonly" name="regId" id="regId"></p>
+					<button type="button" onclick="registrar();">Registrar</button>
+				</form>
 				<div id="consola"></div>
 				<div id="notificaciones">
-					<p class="comentario">Aquí se mostraría la última notificación y habría un botón para acceder a todo el listado.</p>
+					<p>Aquí se mostraría la última notificación y habría un botón para acceder a todo el listado.</p>
+					<a href="#" onclick="registrar();" data-role="button">Registrar</a>
 				</div><!-- /notificaciones -->
 				<div data-role="controlgroup" data-theme="b" class="menu">
 					<a href="#noticias" data-role="button" data-theme="b" data-icon="fa-bullhorn" data-transition="slide">Noticias</a>
