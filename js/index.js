@@ -76,9 +76,10 @@ function onDeviceReady() {
 
   // Push Notifications
   pushNotification = window.plugins.pushNotification;
-  alert("registering " + device.platform );
-  if (device.platform == 'android' || device.platform == 'Android') {
-    pushNotification.register(successHandler, errorHandler, {"senderID":"896955415622","ecb":"onNotification"});
+  devicePlatform = device.platform;
+  alert("registering " + devicePlatform );
+  if (devicePlatform == 'android' || devicePlatform == 'Android') {
+    pushNotification.register(successHandler, errorHandler, {"senderID":"896955415622","ecb":"onNotificationGCM"});
   }
 
 }
