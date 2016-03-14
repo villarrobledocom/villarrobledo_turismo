@@ -37,7 +37,7 @@ function registrar(){
     jQuery.ajax({
       type: 'POST',
       url: registroURL,
-      data: 'nombre=' + nombre + '&emailr=' + email + '&regId=' + regId,
+      data: 'nombre=' + nombre + '&email=' + email + '&regId=' + regId,
       dataType: 'html',
       cache: false,
       success: function(response) {
