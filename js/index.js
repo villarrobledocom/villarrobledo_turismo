@@ -1,6 +1,6 @@
 var pushNotification;
 var registroURL = 'http://www.villarrobledo.com/app/registro.php';
-var noticiasURL = 'http://www.villarrobledo.com/app/listado_noticias.php',
+var noticiasURL = 'http://www.villarrobledo.com/app/listado_noticias.php';
 function onNotificationGCM(e) {
   alert("EVENT -> RECEIVED:" + e.event);
   switch(e.event) {
