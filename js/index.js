@@ -1,4 +1,6 @@
 var pushNotification;
+var registroURL = 'http://www.villarrobledo.com/app/registro.php';
+var noticiasURL = 'http://www.villarrobledo.com/app/listado_noticias.php',
 function onNotificationGCM(e) {
   alert("EVENT -> RECEIVED:" + e.event);
   switch(e.event) {
@@ -28,15 +30,25 @@ function errorHandler (error) {
 
 // Registrar el dispositivo para notificaciones Push
 function registrar(){
-  var nombre = document.getElementById('name').value;
-  var email = document.getElementById('email').value;
-  var regId = document.getElementById('regId').value;
+  var nombre = $("#nombre").val();
+  var email = $("#email").val();
+  var regId = $("#regId]").val();
   if(regId != "") {
-    if(nombre != "" && email != "") document.formulario.submit(); else alert('Ingrese un nombre y un correo para el registro en la base de datos.');
+    jQuery.ajax({
+      type: 'POST',
+      url: registroURL,
+      data: 'nombre=' + nombre+ '&emailr=' + email + '&regId=' + regId,
+      dataType: 'html',
+      cache: false,
+      success: function(response) {
+        alert("Informacíon enviada");
+      }
+    });
   } else {
     alert('Esperando el regId del registro en GCM!');
   }
 }
+
 function alertDismissed() {}
 function checkConnection() {
   var networkState = navigator.connection.type;
@@ -54,8 +66,8 @@ function checkConnection() {
 // Al cargar la página de noticias
 $(document).on('pagebeforeshow', '#noticias', function() {
   $.ajax({
-    url: 'http://www.villarrobledo.com/app/listado_noticias.php',
     type: 'GET',
+    url: noticiasURL;
     dataType: 'json',
     timeout: 25000,
     success: function(data, status) {
