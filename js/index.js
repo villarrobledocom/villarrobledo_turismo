@@ -37,7 +37,7 @@ function registrar(){
     jQuery.ajax({
       type: 'POST',
       url: registroURL,
-      data: 'nombre=' + nombre+ '&emailr=' + email + '&regId=' + regId,
+      data: 'nombre=' + nombre + '&emailr=' + email + '&regId=' + regId,
       dataType: 'html',
       cache: false,
       success: function(response) {
@@ -67,7 +67,7 @@ function checkConnection() {
 $(document).on('pagebeforeshow', '#noticias', function() {
   $.ajax({
     type: 'GET',
-    url: noticiasURL;
+    url: noticiasURL,
     dataType: 'json',
     timeout: 25000,
     success: function(data, status) {
