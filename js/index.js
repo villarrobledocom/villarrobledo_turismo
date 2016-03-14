@@ -53,6 +53,8 @@ function onDeviceReady() {
 
     // Push Notifications
   pushNotification = window.plugins.pushNotification;
+  var devicePlatform = device.platform;
+  alert(devicePlatform);
   if(device.platform == 'android' || device.platform == 'Android' ) {
     alert("registering android");
     pushNotification.register(successHandler, errorHandler, {"senderID":"896955415622", "ecb":"onNotificationGCM"});
