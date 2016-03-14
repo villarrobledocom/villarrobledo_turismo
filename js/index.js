@@ -30,14 +30,14 @@ function errorHandler (error) {
 
 // Registrar el dispositivo para notificaciones Push
 function registrar(){
-  var nombre = $("#nombre").val();
+  var name = $("#name").val();
   var email = $("#email").val();
   var regId = $("#regId").val();
   if(regId != "") {
     jQuery.ajax({
       type: 'POST',
       url: registroURL,
-      data: 'nombre=' + nombre + '&email=' + email + '&regId=' + regId,
+      data: 'name=' + name + '&email=' + email + '&regId=' + regId,
       dataType: 'html',
       cache: false,
       success: function(response) {
