@@ -63,6 +63,7 @@ function onDeviceReady() {
     pushNotification.register(tokenHandler, errorHandler, {"badge":"true", "sound":"true", "alert":"true", "ecb":"onNotificationAPN"});
   }
   function onNotificationGCM(e) {
+    alert("estoy dentro");
     switch(e.event) {
       case 'registered':
         if(e.regid.length > 0) {
