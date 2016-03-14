@@ -1,6 +1,42 @@
 var pushNotification;
+function onNotificationGCM(e) {
+  alert("EVENT -> RECEIVED:" + e.event);
+  switch(e.event) {
+    case 'registered':
+      if(e.regid.length > 0) {
+        alert('registration id = ' + e.regid);
+        document.getElementById('regId').value = e.regid;
+      }
+      break;
+    case 'message':
+      alert('message = ' + e.payload.message + ' msgcnt = ' + e.payload.msgcnt);
+      break;
+    case 'error':
+      alert('GCM error = ' + e.msg);
+      break;
+    default:
+      alert('An unknown GCM event has occurred');
+      break;
+  }
+}
+function successHandler (result) {
+  alert("success: " + result);
+}
+function errorHandler (error) {
+  alert("error:" + error);
+}
 
-// Generales
+// Registrar el dispositivo para notificaciones Push
+function registrar(){
+  var nombre = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var regId = document.getElementById('regId').value;
+  if(regId != "") {
+    if(nombre != "" && email != "") document.formulario.submit(); else alert('Ingrese un nombre y un correo para el registro en la base de datos.');
+  } else {
+    alert('Esperando el regId del registro en GCM!');
+  }
+}
 function alertDismissed() {}
 function checkConnection() {
   var networkState = navigator.connection.type;
@@ -37,57 +73,12 @@ $(document).on('pagebeforeshow', '#noticias', function() {
 function onDeviceReady() {
 
   navigator.notification.alert("El dispositivo está preparado", alertDismissed(), 'Aviso', 'Cerrar');
-  checkConnection();
 
-  // Registrar el dispositivo para notificaciones Push
-  function registrar(){
-    var nombre = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var regId = document.getElementById('regId').value;
-    if(regId != "") {
-      if(nombre != "" && email != "") document.formulario.submit(); else alert('Ingrese un nombre y un correo para el registro en la base de datos.');
-    } else {
-      alert('Esperando el regId del registro en GCM!');
-    }
-  }
-
-    // Push Notifications
+  // Push Notifications
   pushNotification = window.plugins.pushNotification;
-  var devicePlatform = device.platform;
-  alert(devicePlatform);
-  if(device.platform == 'android' || device.platform == 'Android' ) {
-    alert("registering android");
-    pushNotification.register(successHandler, errorHandler, {"senderID":"896955415622", "ecb":"onNotificationGCM"});
-  } else {
-    alert("registering ios");
-    pushNotification.register(tokenHandler, errorHandler, {"badge":"true", "sound":"true", "alert":"true", "ecb":"onNotificationAPN"});
-  }
-  function onNotificationGCM(e) {
-    alert("estoy dentro");
-    switch(e.event) {
-      case 'registered':
-        if(e.regid.length > 0) {
-          console.log("Regid " + e.regid);
-          alert('registration id = ' + e.regid);
-          document.getElementById('regId').value = e.regid;
-        }
-        break;
-      case 'message':
-        alert('message = ' + e.payload.message + ' msgcnt = ' + e.payload.msgcnt);
-        break;
-      case 'error':
-        alert('GCM error = ' + e.msg);
-        break;
-      default:
-        alert('An unknown GCM event has occurred');
-        break;
-    }
-  }
-  function successHandler(result) {
-    alert('Callback Success! Result = ' + result);
-  }
-  function errorHandler(error) {
-    alert(error);
+  alert("registering " + device.platform );
+  if (device.platform == 'android' || device.platform == 'Android') {
+    pushNotification.register(successHandler, errorHandler, {"senderID":"896955415622","ecb":"onNotification"});
   }
 
 }
