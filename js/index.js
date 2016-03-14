@@ -32,7 +32,7 @@ function errorHandler (error) {
 function registrar(){
   var nombre = $("#nombre").val();
   var email = $("#email").val();
-  var regId = $("#regId]").val();
+  var regId = $("#regId").val();
   if(regId != "") {
     jQuery.ajax({
       type: 'POST',
