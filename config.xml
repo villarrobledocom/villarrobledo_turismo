@@ -16,14 +16,14 @@
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="android-installLocation" value="auto" />
     <preference name="phonegap-version" value="3.7.0" />
-    <plugin name="cordova-plugin-device" source="npm" spec="1.1.6" />
+    <plugin name="cordova-plugin-device" source="npm"/>
     <plugin name="cordova-plugin-globalization" source="npm"/>
     <plugin name="cordova-plugin-geolocation" source="npm"/>
     <plugin name="cordova-plugin-inappbrowser" source="npm"/>
-    <plugin name="org.apache.cordova.network-information" source="pgb" spec="0.2.15" />
-    <plugin name="org.apache.cordova.dialogs" source="pgb" spec="0.3.0" />
-    <plugin name="org.apache.cordova.splashscreen" source="pgb" spec="1.0.0" />
-    <plugin name="org.apache.cordova.vibration" source="pgb" spec="0.3.13" />
+    <plugin name="cordova-plugin-network-information" source="npm"/>
+    <plugin name="cordova-plugin-dialogs" source="npm"/>
+    <plugin name="cordova-plugin-splashscreen" source="npm"/>
+    <plugin name="cordova-plugin-vibration" source="npm"/>
 	<plugin name="phonegap-plugin-push" source="npm">
 		<param name="SENDER_ID" value="896955415622" />
 	</plugin>
