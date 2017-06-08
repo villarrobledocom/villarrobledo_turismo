@@ -15,7 +15,7 @@
     <preference name="show-splash-screen-spinner" value="true" />
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="android-installLocation" value="auto" />
-    <preference name="phonegap-version" value="3.9.0" />
+    <preference name="phonegap-version" value="3.7.0" />
 	<plugin name="cordova-plugin-battery-status" spec="~1.2.4" />
 	<plugin name="cordova-plugin-camera" spec="~2.4.1" />
 	<plugin name="cordova-plugin-console" spec="~1.0.7" />
