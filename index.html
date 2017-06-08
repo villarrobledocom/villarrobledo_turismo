@@ -12,7 +12,6 @@
 		<script src="cordova.js"></script>
 		<script src="js/PushNotification.js"></script>
 		<script src="js/index.js"></script>
-
 	</head>
 	<body onload="init();">
 
@@ -23,14 +22,11 @@
 			</div><!-- /header -->
 			<div data-role="content">
 				<form id="formulario">
-					<p><input type="text" value="Juan Nadie" name="name" id="name"></p>
-					<p><input type="text" value="pepe@terra.es" name="email" id="email"></p>
-					<p><input type="text" readonly="readonly" name="regId" id="regId"></p>
-					<button type="button" onclick="registrar();">Registrar</button>
 				</form>
 				<div id="consola"></div>
 				<div id="notificaciones">
 					<p>Aquí se mostraría la última notificación y habría un botón para acceder a todo el listado.</p>
+					<a href="#notificaciones" data-role="button" data-theme="b" data-icon="plus" data-inline="true" data-transition="slide">Notificaciones</a>
 				</div><!-- /notificaciones -->
 				<div data-role="controlgroup" data-theme="b" class="menu">
 					<a href="#noticias" data-role="button" data-theme="b" data-icon="fa-bullhorn" data-transition="slide">Noticias</a>
@@ -45,14 +41,63 @@
 			</div><!-- /footer -->
 		</div><!-- /page -->
 
-
+		<!-- Notificaciones -->
+		<div data-role="page" id="notificaciones">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<a href="#opt_notificaciones" data-role="button" data-theme="b" data-icon="plus" data-inline="true" data-transition="slide">Opciones</a>
+				<h2>Notificaciones</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="listadonotificaciones">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
+				</div><!-- /notificaciones -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+				<!-- Opciones Notificaciones -->
+		<div data-role="page" id="opt_notificaciones">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Opciones de Notificacion</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<form id="formulario">
+					<p>UUID<input type="text" readonly="readonly" value="" name="name" id="name"></p>
+					<p><input type="hidden" readonly="readonly" value="" name="email" id="email"></p>
+					<p>RegID<input type="text" readonly="readonly" name="regId" id="regId"></p>
+					 <fieldset data-role="controlgroup">
+						<legend>Recibir notificaciones de:</legend>
+							<input type="checkbox" name="agencia01" id="agencia01">
+							<label for="agencia01">Agencia 01</label>
+							<input type="checkbox" name="agencia02" id="agencia02">
+							<label for="agencia02">Agencia 02</label>
+							<input type="checkbox" name="agencia03" id="agencia03">
+							<label for="agencia03">Agencia 03</label>
+					</fieldset>
+					<label>
+						<input type="checkbox" name="no_notificaciones">No recibir notificaciones
+					</label>
+					<button type="button" onclick="registrar();">Registrar</button>
+				</form>
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
 		<!-- Noticias -->
 		<div data-role="page" id="noticias">
 			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
 				<h2>Noticias</h2>
 			</div><!-- /header -->
 			<div data-role="content">
 				<div id="listadonoticias">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
 				</div><!-- /noticias -->
 			</div><!-- /content -->
 			<div data-role="footer" data-theme="b">
@@ -64,10 +109,12 @@
 		<!-- Agenda -->
 		<div data-role="page" id="agenda">
 			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
 				<h2>Agenda</h2>
 			</div><!-- /header -->
 			<div data-role="content">
 				<div id="listadoactividades">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
 				</div><!-- /agenda -->
 			</div><!-- /content -->
 			<div data-role="footer" data-theme="b">
@@ -79,6 +126,7 @@
 		<!-- Directorio -->
 		<div data-role="page" id="directorio">
 			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
 				<h2>Directorio</h2>
 			</div><!-- /header -->
 			<div data-role="content">
@@ -110,6 +158,7 @@
 				<p>Este patrimonio se completa con numerosos edificios religiosos y civiles entre los que destacan: la iglesia de San Sebastián, cuya parroquia fue fundada en el siglo XV, los conventos cisterciense de San Bernardo del siglo XVI y el de las Clarisas (convento de Santa Clara) y su iglesia de San Juan de principios del siglo XVII, y sobre todo el santuario de Nuestra Señora de la Caridad, patrona de Villarrobledo y que conserva curiosos tesoros.</p>
 				<p>En cuanto al patrimonio civil, recoge destacados edificios que son exponentes de diversos estilos y épocas.</p>
 				<div id="listadolugares">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
 				</div><!-- /patrimonio -->
 			</div><!-- /content -->
 			<div data-role="footer" data-theme="b">
@@ -125,7 +174,10 @@
 				<h2>Entes municipales</h2>
 			</div><!-- /header -->
 			<div data-role="content">
-				<p class="comentario">Aquí se mostrará el directorio municipal.</p>
+				<h1>Directorio Municipal</h1>
+				<div id="listadomunicipal">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
+				</div><!-- /municipal -->
 			</div><!-- /content -->
 			<div data-role="footer" data-theme="b">
 				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
@@ -141,6 +193,7 @@
 			</div><!-- /header -->
 			<div data-role="content">
 				<div id="listadoasociacionesyclubes">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
 				</div><!-- /asociacionesyclubes -->
 			</div><!-- /content -->
 			<div data-role="footer" data-theme="b">
@@ -157,6 +210,7 @@
 			</div><!-- /header -->
 			<div data-role="content">
 				<div id="listadoparquesyjardines">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
 				</div><!-- /parquesyjardines -->
 			</div><!-- /content -->
 			<div data-role="footer" data-theme="b">
@@ -173,6 +227,7 @@
 			</div><!-- /header -->
 			<div data-role="content">
 				<div id="listadoalojamiento">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
 				</div><!-- /alojamiento -->
 			</div><!-- /content -->
 			<div data-role="footer" data-theme="b">
@@ -190,6 +245,7 @@
 			</div><!-- /header -->
 			<div data-role="content">
 				<div id="listadobaresyrestaurantes">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
 				</div><!-- /baresyrestaurantes -->
 			</div><!-- /content -->
 			<div data-role="footer" data-theme="b">
@@ -206,6 +262,7 @@
 			</div><!-- /header -->
 			<div data-role="content">
 				<div id="listadobodegas">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
 				</div><!-- /bodegas -->
 			</div><!-- /content -->
 			<div data-role="footer" data-theme="b">
@@ -222,6 +279,7 @@
 			</div><!-- /header -->
 			<div data-role="content">
 				<div id="listadoartesanos">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
 				</div><!-- /artesanos -->
 			</div><!-- /content -->
 			<div data-role="footer" data-theme="b">
@@ -233,6 +291,7 @@
 		<!-- Turismo -->
 		<div data-role="page" id="turismo">
 			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
 				<h2>Turismo</h2>
 			</div><!-- /header -->
 			<div data-role="content">
@@ -329,13 +388,219 @@
 				<h2>Fiestas</h2>
 			</div><!-- /header -->
 			<div data-role="content">
+				<p>Villarrobledo ofrece un amplio y variado calendario festivo y cultural a lo largo de todo el año con eventos de enorme relevancia.</p>
+				<ul data-role="listview" data-inset="true">
+					<li><a href="#carnaval" ><img src="http://venavillarrobledo.com/assets/images/carnaval.jpg"/><h3>Carnaval</h3><p>Entre febrero y marzo.</p></a></li>
+					<li><a href="#semanasanta" ><img src="http://venavillarrobledo.com/assets/images/semanasanta.jpg"/><h3>Semana Santa</h3><p>Entre marzo y abril.</p></a></li>
+					<li><a href="#ferias" ><img src="http://venavillarrobledo.com/assets/images/feria.jpg"/><h3>Ferias y Fiestas</h3><p>En torno al 15 de agosto.</p></a></li>
+					<li><a href="#vinarock" ><img src="http://venavillarrobledo.com/assets/images/vinarock.jpg"/><h3>Viña Rock</h3><p>En torno al 1 de mayo.</p></a></li>
+					<li><a href="#sananton" ><img src="http://venavillarrobledo.com/assets/images/gal_sananton1.jpg"/><h3>San Antón</h3><p>En torno al 17 de enero.</p></a></li>
+					<li><a href="#sansebastian" ><img src="http://venavillarrobledo.com/assets/images/gal_sansebastian.jpg"/><h3>San Sebastián</h3><p>En torno al 20 de enero.</p></a></li>
+					<li><a href="#sanblas" ><img src="http://venavillarrobledo.com/assets/images/gal_sanblas2.jpg"/><h3>San Blas</h3><p>En torno al 3 de febrero.</p></a></li>
+					<li><a href="#sanisidro" ><img src="http://venavillarrobledo.com/assets/images/gal_sanisidro2.jpg"/><h3>San Isidro</h3><p>En torno al 15 de mayo.</p></a></li>
+					<li><a href="#sancristobal" ><img src="http://venavillarrobledo.com/assets/images/gal_sancristobal1.jpg"/><h3>San Cristóbal</h3><p>En torno al 10 de julio.</p></a></li>
+					<li><a href="#santiago" ><img src="http://venavillarrobledo.com/assets/images/gal_santiago1.jpg"/><h3>Santiago</h3><p>En torno al 25 de julio.</p></a></li>
+					<li><a href="#dulcenombre" ><img src="http://venavillarrobledo.com/assets/images/gal_dulcenombre2.jpg"/><h3>Dulce nombre</h3><p>En torno al 12 de septiembre.</p></a></li>
+					<li><a href="#enoturismo" ><img src="http://venavillarrobledo.com/assets/images/gal_enoturismo1.jpg"/><h3>Día europeo del Enoturismo</h3><p>En torno al 8 de noviembre.</p></a></li>
+				</ul>
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		<!-- Carnaval -->
+		<div data-role="page" id="carnaval">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Carnaval</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="carnavalcontent">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
+				</div><!-- /carnavalcontent -->
 			</div><!-- /content -->
 			<div data-role="footer" data-theme="b">
 				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
 			</div><!-- /footer -->
 		</div><!-- /page -->
 
+		<!-- Semana Santa -->
+		<div data-role="page" id="semanasanta">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Semana Santa</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="semanasantacontent">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
+				</div><!-- /semanasantacontent -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->	
 
+		<!-- Feria y Fiestas -->
+		<div data-role="page" id="ferias">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Feria y Fiestas</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="feriascontent">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
+				</div><!-- /feriascontent -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->	
+
+		<!-- Viña Rock -->
+		<div data-role="page" id="vinarock">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Viña Rock</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="vinarockcontent">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
+				</div><!-- /vinarockcontent -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->				
+		
+		<!-- San Antón -->
+		<div data-role="page" id="sananton">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Viña Rock</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="sanantoncontent">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
+				</div><!-- /sanantoncontent -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		<!-- San Sebastián -->
+		<div data-role="page" id="sansebastian">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>San Sebastián</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="sansebastiancontent">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
+				</div><!-- /sansebastiancontent -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+		<!-- San Blas -->
+		<div data-role="page" id="sanblas">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>San Blas</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="sanblascontent">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
+				</div><!-- /sanblascontent -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		<!-- San Isidro -->
+		<div data-role="page" id="sanisidro">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>San Isidro</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="sanisidrocontent">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
+				</div><!-- /sanisidrocontent -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->	
+		
+		<!-- San Cristóbal -->
+		<div data-role="page" id="sancristobal">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>San Cristóbal</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="sancristobalcontent">
+				</div><!-- /sancristobalcontent -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		<!-- Santiago -->
+		<div data-role="page" id="santiago">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Santiago</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="santiagocontent">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
+				</div><!-- /santiagocontent -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		<!-- Dulce nombre -->
+		<div data-role="page" id="dulcenombre">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Dulce nombre</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="dulcenombrecontent">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
+				</div><!-- /dulcenombrecontent -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		<!-- Día europeo del Enoturismo -->
+		<div data-role="page" id="enoturismo">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Día europeo del Enoturismo</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="enoturismocontent">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
+				</div><!-- /enoturismocontent -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+		
 		<!-- Zonas verdes y naturaleza -->
 		<div data-role="page" id="zonasverdesynaturaleza">
 			<div data-role="header" data-theme="b">
@@ -343,6 +608,9 @@
 				<h2>Zonas verdes y naturaleza</h2>
 			</div><!-- /header -->
 			<div data-role="content">
+				<div id="zonasverdesynaturalezacontent">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
+				</div><!-- /zonasverdesynaturalezacontent -->
 			</div><!-- /content -->
 			<div data-role="footer" data-theme="b">
 				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
@@ -357,6 +625,10 @@
 				<h2>Cosas que hacer</h2>
 			</div><!-- /header -->
 			<div data-role="content">
+				<div data-role="controlgroup" data-theme="b" id="menu">
+					<a href="#agenda" data-role="button" data-theme="b" data-icon="fa-calendar" data-transition="slide">Próximas actividades</a>
+					<a href="#baresyrestaurantes" data-role="button" data-theme="b" data-icon="fa-cutlery" data-transition="slide">Bares y restaurantes</a>
+				</div><!-- /menu -->
 			</div><!-- /content -->
 			<div data-role="footer" data-theme="b">
 				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
@@ -371,6 +643,13 @@
 				<h2>Rutas turísticas</h2>
 			</div><!-- /header -->
 			<div data-role="content">
+			<ul data-role="listview" data-inset="true">
+			<li><a href="http://venavillarrobledo.com/quijoteurb.php"><img src="http://venavillarrobledo.com/assets/images/quijoteurb.jpg" /><h3>Recorrido urbano de la Ruta del Quijote</h3><p>La Ruta del Quijote entra en Villarrobledo por el denominado Camino de Las Pedroñeras e inicia su recorrido urbano por la calle Dos de Mayo y lo continúa por el Barrio de los Pintores. Desde aquí se accede al primer punto de interés de la ruta: el entorno del Santuario de la Virgen de la Caridad.</p></a></li>
+			<li><a href="http://venavillarrobledo.com/quijotenat.php"><img src="http://venavillarrobledo.com/assets/images/quijotenat.jpg" /><h3>Recorrido natural de la Ruta del Quijote</h3><p>Esta ruta se puede admirar un paisaje cambiante según se suceden las estaciones: en primavera adquiere toques impresionistas con colores vivos y luminosos, en verano amarillean los rastrojos y verdean las viñas, y en otoño e invierno se viste de colores pardos, rojizos y verdes intensos del monte típico mediterráneo.</p></a></li>
+			<li><a href="http://venavillarrobledo.com/caminos.php"><img src="http://venavillarrobledo.com/assets/images/caminos.jpg" /><h3>Caminos del Vino</h3><p>Platos y guisos ancestrales propios de la zona, elaborados a la manera tradicional, y que ofrecen, acompañados de un buen vino, un universo de texturas y sabores.</p></a></li>
+			<li><a href="http://venavillarrobledo.com/deruta.php"><img src="" /><h3>De ruta... tanto por conocer</h3><p>Puntos de interes</p></a></li>
+			<li><a href="http://venavillarrobledo.com/literaria.php"><img src="" /><h3>Ruta Literaria del Quijote</h3><p>La ruta literaria "El Quijote por La Mancha de Aragón" incluye en su recorrido ciudades como Villarrobledo, Minaya, La Roda, Munera, El Bonillo y la Cueva de Montesinos en Ossa de Montiel.</p></a></li>
+			</ul>
 			</div><!-- /content -->
 			<div data-role="footer" data-theme="b">
 				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
@@ -395,11 +674,30 @@
 		<!-- Enlaces -->
 		<div data-role="page" id="enlaces">
 			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
 				<h2>Enlaces</h2>
 			</div><!-- /header -->
 			<div data-role="content">
 				<div id="listadoenlaces">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
 				</div><!-- /enlaces -->
+			</div><!-- /content -->
+			<div data-role="footer" data-theme="b">
+				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		
+		
+		<!-- Ficha -->
+		<div data-role="page" id="ficha">
+			<div data-role="header" data-theme="b">
+				<a href="#" data-role="button" data-icon="carat-l" data-inline="true" data-transition="fade" onclick="window.history.back()">Atrás</a>
+				<h2>Ficha</h2>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="contenido">
+				<br><br><h1 style="text-align:center;">Cargando...</h1>
+				</div><!-- /contenido -->
 			</div><!-- /content -->
 			<div data-role="footer" data-theme="b">
 				<a href="#inicio" data-role="button" data-icon="home" data-inline="true" data-transition="slidedown">Inicio</a>
