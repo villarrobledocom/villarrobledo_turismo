@@ -16,6 +16,7 @@
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="android-installLocation" value="auto" />
     <preference name="phonegap-version" value="3.7.0" />
+    <plugin name="org.apache.cordova.battery-status" source="pgb"/>
     <plugin name="org.apache.cordova.camera" source="pgb" spec="0.3.6" />
     <plugin name="org.apache.cordova.media-capture" source="pgb" spec="0.3.6" />
     <plugin name="org.apache.cordova.console" source="pgb" spec="0.2.13" />
