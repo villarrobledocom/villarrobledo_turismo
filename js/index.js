@@ -41,7 +41,6 @@ $(document).on('pagebeforeshow', '#notificaciones', function() {
 
 // Al cargar la página de noticias
 $(document).on('pagebeforeshow', '#noticias', function() {
-	alert(device.uuid);
   $.ajax({
     type: 'GET',
     url: noticiasURL,
@@ -62,7 +61,6 @@ $(document).on('pagebeforeshow', '#noticias', function() {
 });
 // Al cargar la página de la agenda
 $(document).on('pagebeforeshow', '#agenda', function() {
-	alert(data.registrationId);
   $.ajax({
     type: 'GET',
     url: agendaURL,
