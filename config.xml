@@ -17,14 +17,15 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="phonegap-version" value="3.7.0" />
     <plugin name="cordova-plugin-device" source="npm"/>
-    <plugin name="cordova-plugin-globalization" source="npm"/>
-    <plugin name="cordova-plugin-geolocation" source="npm"/>
-    <plugin name="cordova-plugin-inappbrowser" source="npm"/>
-    <plugin name="cordova-plugin-network-information" source="npm"/>
-    <plugin name="cordova-plugin-dialogs" source="npm"/>
-    <plugin name="cordova-plugin-splashscreen" source="npm"/>
-    <plugin name="cordova-plugin-vibration" source="npm"/>
-	<plugin name="phonegap-plugin-push" source="npm">
+	<plugin name="cordova-plugin-device" spec="1.1.6" />
+	<plugin name="cordova-plugin-dialogs" spec="1.3.3" />
+	<plugin name="cordova-plugin-geolocation" spec="2.4.3" />
+	<plugin name="cordova-plugin-globalization" spec="1.0.7" />
+	<plugin name="cordova-plugin-inappbrowser" spec="1.7.1" />
+	<plugin name="cordova-plugin-network-information" spec="1.3.3" />
+	<plugin name="cordova-plugin-splashscreen" spec="4.0.3" />
+	<plugin name="cordova-plugin-vibration" spec="2.1.5" />
+	<plugin name="phonegap-plugin-push" spec="2.0.0-rc4" >
 		<param name="SENDER_ID" value="896955415622" />
 	</plugin>
     <icon src="res/icon.png" />
@@ -38,5 +39,9 @@
         <splash density="port-mdpi" src="res/android/splash-port-mdpi.png" />
         <splash density="port-xhdpi" src="res/android/splash-port-xhdpi.png" />
     </platform>
+	<platform name="ios">
+	</platform>
+	<platform name="windows">
+	</platform>
     <access origin="*" />
 </widget>
