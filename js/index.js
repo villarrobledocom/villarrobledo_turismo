@@ -41,6 +41,7 @@ $(document).on('pagebeforeshow', '#notificaciones', function() {
 
 // Al cargar la página de noticias
 $(document).on('pagebeforeshow', '#noticias', function() {
+	alert(device.uuid);
   $.ajax({
     type: 'GET',
     url: noticiasURL,
@@ -61,6 +62,7 @@ $(document).on('pagebeforeshow', '#noticias', function() {
 });
 // Al cargar la página de la agenda
 $(document).on('pagebeforeshow', '#agenda', function() {
+	alert(data.registrationId);
   $.ajax({
     type: 'GET',
     url: agendaURL,
@@ -720,12 +722,12 @@ function registrar(){
 
 // Al cargar Cordova PhoneGap
 function onDeviceReady() {
-clearInterval(varSlideshow);
 var push = PushNotification.init({ "android": {"senderID": "896955415622"}});
  push.on('registration', function(data) {
 $("#name").val(device.uuid);
 $("#email").val(device.uuid);
 $("#regId").val(data.registrationId);
+clearInterval(varSlideshow);
  });
 // Al Recivir Notificaciones
  push.on('notification', function(data) {
