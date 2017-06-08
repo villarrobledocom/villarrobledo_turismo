@@ -16,7 +16,6 @@
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="android-installLocation" value="auto" />
     <preference name="phonegap-version" value="3.7.0" />
-    <plugin name="cordova-plugin-device" source="npm"/>
 	<plugin name="cordova-plugin-device" spec="1.1.6" />
 	<plugin name="cordova-plugin-dialogs" spec="1.3.3" />
 	<plugin name="cordova-plugin-geolocation" spec="2.4.3" />
