@@ -35,7 +35,7 @@
     <plugin name="org.apache.cordova.splashscreen" source="pgb" spec="1.0.0" />
     <plugin name="org.apache.cordova.vibration" source="pgb" spec="0.3.13" />
 	<plugin name="phonegap-plugin-push" source="npm">
-		<param name="SENDER_ID" value="123456789" />
+		<param name="SENDER_ID" value="896955415622" />
 	</plugin>
     <icon src="res/icon.png" />
     <platform name="android">
@@ -49,6 +49,4 @@
         <splash density="port-xhdpi" src="res/android/splash-port-xhdpi.png" />
     </platform>
     <access origin="*" />
-        <variable name="SENDER_ID" value="896955415622" />
-    </plugin>
 </widget>
