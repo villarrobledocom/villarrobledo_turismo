@@ -665,6 +665,24 @@ $(function(){
   }
 });
 
+// Slideshow-Imagenes-iniciar
+ function inicioSlideshow (){
+    var elemento = document.getElementById('fotosul').getElementsByTagName('li');
+    varSlideshow = setInterval(function(){ slideshow(elemento) }, 2000);
+  }
+// Slideshow-Imagenes
+ var varSlideshow = setInterval(function(){ slideshow(elemento) }, 2000);
+ var indice = 0;
+ function slideshow(elemento) {
+    if(indice >= elemento.length) {
+      indice = 0;
+      elemento[(elemento.length) - 1].className = 'noselected';
+    }
+    elemento[indice].className = 'selected';
+    if(indice >= 1) elemento[indice - 1].className = 'noselected';
+    indice ++;
+  }
+
 function alertDismissed() {}
 function checkConnection() {
   var networkState = navigator.connection.type;
@@ -724,24 +742,6 @@ $("#regId").val(data.registrationId);
 function init() {
  document.addEventListener("deviceready", onDeviceReady(), false);
 }
-
-// Slideshow-Imagenes-iniciar
- function inicioSlideshow (){
-    var elemento = document.getElementById('fotosul').getElementsByTagName('li');
-    varSlideshow = setInterval(function(){ slideshow(elemento) }, 2000);
-  }
-// Slideshow-Imagenes
- var varSlideshow = setInterval(function(){ slideshow(elemento) }, 2000);
- var indice = 0;
- function slideshow(elemento) {
-    if(indice >= elemento.length) {
-      indice = 0;
-      elemento[(elemento.length) - 1].className = 'noselected';
-    }
-    elemento[indice].className = 'selected';
-    if(indice >= 1) elemento[indice - 1].className = 'noselected';
-    indice ++;
-  }
 
 //Funcion que lee los parametros de la URL
 function getParameterByName( name, url ) {
